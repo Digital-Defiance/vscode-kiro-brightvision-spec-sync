@@ -2,6 +2,8 @@
 
 A VS Code extension for bidirectional synchronization of EARS specs between Kiro (`.kiro/specs/{name}/`) and cecli (`.cecli/specs/{hash}/` + `todos.json`).
 
+[https://marketplace.visualstudio.com/items?itemName=DigitalDefiance.kiro-brightvision-sync](https://marketplace.visualstudio.com/items?itemName=DigitalDefiance.kiro-brightvision-sync)
+
 ## How It Works
 
 | Kiro | cecli |

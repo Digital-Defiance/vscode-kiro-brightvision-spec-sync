@@ -2,7 +2,7 @@
   "name": "kiro-brightvision-sync",
   "displayName": "Kiro ↔ BrightVision Spec Sync",
   "description": "Bidirectional sync of EARS specs between .kiro and .cecli (BrightVision) systems",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "DigitalDefiance",
   "engines": {
     "vscode": "^1.85.0"
@@ -19,6 +19,7 @@
     "url": "https://github.com/Digital-Defiance/vscode-kiro-brightvision-spec-sync"
   },
   "license": "MIT",
+  "icon": "icon.png",
   "main": "./out/extension.js",
   "contributes": {
     "viewsContainers": {

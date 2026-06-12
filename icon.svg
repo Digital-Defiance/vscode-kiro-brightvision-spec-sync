@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="16" fill="#1e1e2e"/>
+  
+  <!-- Outer sync arrows (circular) -->
+  <!-- Top-right arrow arc -->
+  <path d="M 88 36 A 32 32 0 0 1 92 64" 
+        fill="none" stroke="#7aa2f7" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="94,34 88,28 82,38" fill="#7aa2f7"/>
+  
+  <!-- Bottom-left arrow arc -->
+  <path d="M 40 92 A 32 32 0 0 1 36 64" 
+        fill="none" stroke="#f7768e" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="34,94 40,100 46,90" fill="#f7768e"/>
+  
+  <!-- Top-left arrow arc -->
+  <path d="M 40 36 A 32 32 0 0 0 36 64" 
+        fill="none" stroke="#9ece6a" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="38,34 44,28 46,40" fill="#9ece6a"/>
+  
+  <!-- Bottom-right arrow arc -->
+  <path d="M 88 92 A 32 32 0 0 0 92 64" 
+        fill="none" stroke="#e0af68" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="90,94 84,100 82,88" fill="#e0af68"/>
+  
+  <!-- Center text -->
+  <text x="64" y="70" text-anchor="middle" font-family="SF Mono, Menlo, monospace" 
+        font-size="18" font-weight="bold" fill="#c0caf5">KBV</text>
+</svg>
