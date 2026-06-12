@@ -1,0 +1,6 @@
+.git
+src/
+node_modules/
+BrightVision
+tsconfig.json
+.vscodeignore

@@ -1,0 +1,147 @@
+{
+  "name": "kiro-brightvision-sync",
+  "displayName": "Kiro ↔ BrightVision Spec Sync",
+  "description": "Bidirectional sync of EARS specs between .kiro and .cecli (BrightVision) systems",
+  "version": "0.2.0",
+  "publisher": "DigitalDefiance",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:.kiro/specs",
+    "workspaceContains:.cecli/todos.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Digital-Defiance/vscode-kiro-brightvision-spec-sync"
+  },
+  "license": "MIT",
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "kiroBrightVisionSync",
+          "title": "KBV Spec Sync",
+          "icon": "$(sync)"
+        }
+      ]
+    },
+    "views": {
+      "kiroBrightVisionSync": [
+        {
+          "id": "kiroBvSpecs",
+          "name": "Specs"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "kiroBvSync.syncAll",
+        "title": "Kiro ↔ BrightVision: Sync All Specs",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "kiroBvSync.syncToKiro",
+        "title": "Kiro ↔ BrightVision: Pull from BrightVision → Kiro",
+        "icon": "$(arrow-left)"
+      },
+      {
+        "command": "kiroBvSync.syncToCecli",
+        "title": "Kiro ↔ BrightVision: Push from Kiro → BrightVision",
+        "icon": "$(arrow-right)"
+      },
+      {
+        "command": "kiroBvSync.showStatus",
+        "title": "Kiro ↔ BrightVision: Show Sync Status"
+      },
+      {
+        "command": "kiroBvSync.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "kiroBvSync.syncSpec",
+        "title": "Sync This Spec",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "kiroBvSync.pushSpec",
+        "title": "Push to BrightVision",
+        "icon": "$(arrow-right)"
+      },
+      {
+        "command": "kiroBvSync.pullSpec",
+        "title": "Pull to Kiro",
+        "icon": "$(arrow-left)"
+      },
+      {
+        "command": "kiroBvSync.openKiroSpec",
+        "title": "Open in Kiro",
+        "icon": "$(file)"
+      },
+      {
+        "command": "kiroBvSync.openCecliSpec",
+        "title": "Open in BrightVision",
+        "icon": "$(file-symlink-file)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "kiroBvSync.syncAll",
+          "when": "view == kiroBvSpecs",
+          "group": "navigation"
+        },
+        {
+          "command": "kiroBvSync.refresh",
+          "when": "view == kiroBvSpecs",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "kiroBvSync.syncSpec",
+          "when": "view == kiroBvSpecs && viewItem =~ /syncable/",
+          "group": "inline"
+        },
+        {
+          "command": "kiroBvSync.pushSpec",
+          "when": "view == kiroBvSpecs && viewItem =~ /kiro-newer|kiro-only/",
+          "group": "sync"
+        },
+        {
+          "command": "kiroBvSync.pullSpec",
+          "when": "view == kiroBvSpecs && viewItem =~ /cecli-newer|cecli-only/",
+          "group": "sync"
+        },
+        {
+          "command": "kiroBvSync.openKiroSpec",
+          "when": "view == kiroBvSpecs && viewItem =~ /has-kiro/",
+          "group": "open"
+        },
+        {
+          "command": "kiroBvSync.openCecliSpec",
+          "when": "view == kiroBvSpecs && viewItem =~ /has-cecli/",
+          "group": "open"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "npx vsce package --no-dependencies --no-git-tag-version",
+    "publish": "npx vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
